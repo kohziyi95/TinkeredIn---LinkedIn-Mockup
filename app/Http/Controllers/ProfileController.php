@@ -9,8 +9,8 @@ class ProfileController extends Controller
 {
     public function index() {
         $user = Auth::user();
-        $profile = Profile::where('user_id', $user->id)->first();
-        $posts = \App\Models\Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+        $profile = Profile::where('user_id', $user->user_id)->first();
+        $posts = \App\Models\Post::where('user_id', $user->user_id)->orderBy('created_at', 'desc')->get();
         return view('profile', [
             'user' => Auth::user(),
             'profile' => $profile,

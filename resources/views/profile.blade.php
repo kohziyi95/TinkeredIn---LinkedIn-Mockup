@@ -32,7 +32,7 @@
 
                     @if ((empty($profile->description)) Or (empty($profile->image)))
                         <div class="pt-3">
-                            <a href="{{ route('profile.edit' ,['id' => $user->id]) }}">
+                            <a href="{{ route('profile.edit') }}">
                             Complete your profile
                             </a>
                     </div>
