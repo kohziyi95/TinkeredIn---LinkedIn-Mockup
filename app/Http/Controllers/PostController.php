@@ -62,7 +62,7 @@ class PostController extends Controller
         $post-> caption = request('caption');
 
         if (request()->has('postpic')) {
-            $imagePath = request('profilepic')->store('uploads', 'public');
+            $imagePath = request('postpic')->store('uploads', 'public');
             $post->image = $imagePath;
         }
 
