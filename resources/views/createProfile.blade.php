@@ -11,7 +11,7 @@
                     <div class="form-group row mt-3 fw-bold">
                         <label for="description">Description</label>
                         <br>
-                        <textarea name="description" id="description" form="createPost" ></textarea>
+                        <textarea name="description" id="description" form="createPost"></textarea>
                         {{-- <input class="form-control" type="text" name="description" id="description"> --}}
                     </div>
 

@@ -31,8 +31,11 @@
 
 
                     @if ((empty($profile->description)) Or (empty($profile->image)))
-                        <div class="pt-3"><a href="/profile/edit">
-                            Complete your profile</a></div>
+                        <div class="pt-3">
+                            <a href="{{ route('profile.edit' ,['id' => $user->id]) }}">
+                            Complete your profile
+                            </a>
+                    </div>
                     @endif
 
                     @if (!empty($profile->description))

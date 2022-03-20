@@ -84,9 +84,9 @@ class ProfileController extends Controller
 
         if (request()->has('headerpic')) {
             $headerPath = request('headerpic')->store('uploads', 'public');
-            $profile->image = $headerPath;
+            $profile->header_image = $headerPath;
         }
-      ;
+
         $saved = $profile->save();
 
         if ($saved) {

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-4">
             <div class="card-body">
-                <form action="{{ route('profile.postEdit' , ['id' => $profile->id]) }}" enctype="multipart/form-data" method="post" id="postEdit">
+                <form action="{{ route('profile.postEdit', ['id' => $profile->user_id]) }}" enctype="multipart/form-data" method="post" id="postEdit">
                     @csrf
                     <div class="card-title h4 mt-1 fw-bold">Update Your Profile!</div>
                     <div class="form-group row mt-3 fw-bold">

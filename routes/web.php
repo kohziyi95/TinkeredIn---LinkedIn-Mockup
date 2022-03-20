@@ -26,14 +26,16 @@ Route::get('/profile'
     ->name('profile');
 
 Route::get('/profile/create'
-    ,[\App\Http\Controllers\ProfileController::class, 'create']);
+    ,[\App\Http\Controllers\ProfileController::class, 'create'])
+    ->name('profile.create');
 
 Route::post('/profile/postCreate'
     ,[\App\Http\Controllers\ProfileController::class, 'postCreate'])
     -> name('profile.postCreate');
 
 Route::get('/profile/edit'
-    ,[\App\Http\Controllers\ProfileController::class, 'edit']);
+    ,[\App\Http\Controllers\ProfileController::class, 'edit'])
+    ->name('profile.edit');
 
 Route::post('/profile/{id}/edit'
     ,[\App\Http\Controllers\ProfileController::class, 'postEdit'])
