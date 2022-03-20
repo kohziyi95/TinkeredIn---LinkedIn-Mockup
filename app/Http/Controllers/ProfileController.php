@@ -9,8 +9,8 @@ class ProfileController extends Controller
 {
     public function index() {
         $user = Auth::user();
-        $profile = Profile::where('user_id', $user->user_id)->first();
-        $posts = \App\Models\Post::where('user_id', $user->user_id)->orderBy('created_at', 'desc')->get();
+        $profile = Profile::where('user_id', $user->id)->first();
+        $posts = \App\Models\Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
         return view('profile', [
             'user' => Auth::user(),
             'profile' => $profile,
@@ -29,7 +29,7 @@ class ProfileController extends Controller
         ]);
         $user = Auth::user();
         $profile = new Profile();
-        $profile->user_id = $user->user_id;
+        $profile->user_id = $user->id;
         if (request()->has('description')) {
             $profile->description = request('description');
         }
@@ -53,7 +53,7 @@ class ProfileController extends Controller
 
     public function edit(){
         $user = Auth::user();
-        $profile = Profile::where('user_id', $user->user_id)->first();
+        $profile = Profile::where('user_id', $user->id)->first();
         return view('editProfile', [
             'profile' => $profile
         ]);

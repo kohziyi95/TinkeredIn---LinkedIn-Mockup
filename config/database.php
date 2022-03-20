@@ -49,18 +49,18 @@ return [
             'port' => env('DB_PORT', '3306'),
 
             //Database for local development
-            // 'host' => env('DB_HOST'),
-            // 'database' => env('DB_DATABASE'),
-            // 'username' => env('DB_USERNAME'),
-            // 'password' => env('DB_PASSWORD'),
+            'host' => env('DB_HOST'),
+            'database' => env('DB_DATABASE'),
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
 
 
 
             // Database for deployment to Heroku
-            'host' => 'us-cdbr-east-05.cleardb.net',
-            'database' => 'heroku_3cfa1c327de37b8',
-            'username' => 'b699ef5dead150',
-            'password' => '8a7ba687',
+            // 'host' => 'us-cdbr-east-05.cleardb.net',
+            // 'database' => 'heroku_3cfa1c327de37b8',
+            // 'username' => 'b699ef5dead150',
+            // 'password' => '8a7ba687',
 
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
