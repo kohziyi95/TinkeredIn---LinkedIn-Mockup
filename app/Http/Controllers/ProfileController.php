@@ -29,7 +29,7 @@ class ProfileController extends Controller
         ]);
         $user = Auth::user();
         $profile = new Profile();
-        $profile->user_id = $user->id;
+        $profile->user_id = $user->user_id;
         if (request()->has('description')) {
             $profile->description = request('description');
         }
