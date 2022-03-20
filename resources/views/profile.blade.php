@@ -58,7 +58,7 @@
                 </div>
             @foreach ($posts as $post)
                 <div class="card w-100 mt-3 p-3">
-                    <div class="card-title fw-bold mt-1">{{ $post->title}}</div>
+                    <div class="card-title fw-bold h5 mt-1">{{ $post->title}}</div>
                     <div class="card-text mt-2 text-start">{{ $post->caption}}</div>
                     <div><img src="/storage/{{$post->image}}" class="w-100 mt-3"></div>
                     <div class="mt-3">
