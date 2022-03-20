@@ -24,20 +24,26 @@ class ProfileController extends Controller
 
     public function postCreate(){
         $data = request()->validate([
-            'description' => 'required',
-            'profilepic' => ['required', 'image'],
-            'headerpic' => ['required', 'image']
+            'profilepic' => 'image',
+            'headerpic' => 'image'
         ]);
-
-        $imagePath = request('profilepic')->store('uploads', 'public');
-        $headerPath = request('headerpic')->store('uploads', 'public');
-
         $user = Auth::user();
         $profile = new Profile();
         $profile->user_id = $user->id;
-        $profile->description = request('description');
-        $profile->image = $imagePath;
-        $profile->header_image = $headerPath;
+        if (request()->has('description')) {
+            $profile->description = request('description');
+        }
+
+        if (request()->has('profilepic')) {
+            $imagePath = request('profilepic')->store('uploads', 'public');
+            $profile->image = $imagePath;
+        }
+
+        if (request()->has('headerpic')) {
+            $headerPath = request('headerpic')->store('uploads', 'public');
+            $profile->header_image = $headerPath;
+        }
+
         $saved = $profile->save();
 
         if ($saved) {

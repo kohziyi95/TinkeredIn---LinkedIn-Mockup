@@ -3,28 +3,35 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-3"></div>
-        <div class="col-6">
-            <form action="{{ route('profile.postCreate') }}" enctype="multipart/form-data" method="post">
-                @csrf
-                <p>
-                    <label for="description">Description</label>
-                    <br>
-                    <input type="text" name="description" id="description">
-                </p>
-                <p class="mt-3">
-                    <label for="profilepic">Profile Picture</label>
-                    <br>
-                    <input type="file" name="profilepic" id="profilepic">
-                </p>
-                <p class="mt-3">
-                    <label for="headerpic">Profile Header</label>
-                    <br>
-                    <input type="file" name="headerpic" id="headerpic">
-                </p>
+        <div class="col-4">
+            <div class="card-body">
+                <form action="{{ route('profile.postCreate') }}" enctype="multipart/form-data" method="post" id="createPost">
+                    @csrf
+                    <div class="card-title h4 mt-1 fw-bold">Complete Your Profile!</div>
+                    <div class="form-group row mt-3 fw-bold">
+                        <label for="description">Description</label>
+                        <br>
+                        <textarea name="description" id="description" form="createPost" ></textarea>
+                        {{-- <input class="form-control" type="text" name="description" id="description"> --}}
+                    </div>
 
-                <button class="btn btn-primary mt-3" type="submit">Create Profile</button>
-            </form>
+                    <div class="form-group row mt-3 fw-bold">
+                        <label for="profilepic">Profile Picture</label>
+                        <br>
+                        <input type="file" name="profilepic" id="profilepic">
+                    </div>
+
+                    <div class="form-group row mt-3 fw-bold">
+                        <label for="headerpic">Profile Header</label>
+                        <br>
+                        <input type="file" name="headerpic" id="headerpic">
+                    </div>
+
+                    <div class="form-group row mt-4 mb-2">
+                        <button class="btn btn-primary mt-3" type="submit">Create Profile</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
